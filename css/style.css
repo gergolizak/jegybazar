@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('../lib/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css');
 body {
     padding-top: 20px;
+    font-family: 'Roboto', sans-serif;
   }
   
   .footer {
@@ -52,4 +55,10 @@ body {
       padding-right: 0;
       padding-left: 0;
     }
+  }
+
+  /* Home page elements. */
+
+  .home-media-image {
+    width: 25%;
   }
