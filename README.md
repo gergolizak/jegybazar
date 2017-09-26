@@ -20,6 +20,7 @@ Ezek a rendszer építőkockái. Kell majd az oldalunkra pár alert, button, lis
 A Bootstrap beépített JAVASCRIPT funkcionalitását fogjuk használni, de JS programozási ismeret nem kell hozzá. Csak úgy pörögnek majd a felugró ablakok - popoverek - tooltippek.Hogyan? Gyere és megmutatom.
 
 2. jQuery
+   ### Első
 3. Angular basic
 4. Angular advanced
 5. Angular pro
