@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Justified Nav Template for Bootstrap</title>
+    <title>JegyBazár | Regisztráció</title>
 
     <!-- Bootstrap core CSS -->
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -29,7 +29,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav text-md-center nav-justified w-100">
-              <li class="nav-item active">
+              <li class="nav-item ">
                 <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
@@ -49,38 +49,92 @@
         </nav>
       </div>
 
-      <!-- Jumbotron -->
-      <div class="jumbotron">
-        <h1>Jegyek bárkitől, bárhol, bármikor!</h1>
-        <p class="lead">Használd a JegyBazárt és csereberélj jegyeket a legjobb bulikra. Elfogyott? Az orrod előtt vittétek el az utolsót? Ne aggódj, irány a jegybazár!</p>
-        <p><a class="btn btn-lg btn-success" href="events.html" role="button">Nézzük az eseményeket</a></p>
-      </div>
+      <!-- Login -->
+      <div class="row justify-content-center row-login-form">
+        <div class="col-10 col-sm-6 col-md-4 col-lg4">
+          <!-- ALert message -->
+          <div class="alert alert-primary alert-dismissible fade show" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            Regisztrálj és már veheted is a jegyeket.
+          </div> <!-- /Alert message -->
+          <div class="card border-secondary">
+            <div class="card-header">Regisztráció</div>
+            <div class="card-body">
+              <form id="registerForm">
+                  <div class="form-group">
+                    <label for="registerName">Név</label>
+                    <input required name="registerName" type="text" class="form-control" id="registerName" placeholder="Név">
+                  </div>
 
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-lg-4">
-          <h2>Események</h2>
-          <p>Itt találod a legjobb jó bulit, böngéssz bátran és keress vagy adj el jegyeket a barátaidnak, vagy más felhasználóknak.</p>
-          <p><a class="btn btn-primary" href="events.html" role="button">Események &raquo;</a></p>
-        </div>
-        <div class="col-lg-4">
-          <h2>Jegyek</h2>
-          <p>Ha siets, egyből keztheted a jegyek böngészésével is. Itt is tudsz keresni az esémnyek neve vagy időpontja alapján.</p>
-          <p><a class="btn btn-primary" href="tickets.html" role="button">Jegyek &raquo;</a></p>
-        </div>
-        <div class="col-lg-4">
-          <h2>Regisztráció</h2>
-          <p>Még nem regisztrálták? Akkor gyorsan tedd meg, mert a szolgáltatás csak tagoknak elérhető. Sőt! Az újak értékes ajándékot kapnak tőlük.</p>
-          <p><a class="btn btn-primary" href="register.html" role="button">Regisztráció &raquo;</a></p>
-        </div>
-      </div>
+                  <div class="form-group">
+                    <label for="birthDate">Születési idő</label>
+                    <input name="registerBirthDate" type="date" class="forn-control" id="birthDate" value="1999-09-10" 
+                    max="2000-01-01">
+                  </div>
 
-      <!-- Site footer -->
-      <footer class="footer">
-        <p>&copy; Company 2017</p>
-      </footer>
+                  <div class="form-group">
+                    <label class="custom-control custom-radio">
+                        <input id="radio1" name="sex" type="radio" value="1" class="custom-control-input" checked>
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">Fiú</span>
+                      </label>
+                      <label class="custom-control custom-radio">
+                        <input id="radio2" name="sex" type="radio" value="2" class="custom-control-input">
+                        <span class="custom-control-indicator"></span>
+                        <span class="custom-control-description">Lány</span>
+                      </label>
+                  </div>
+                  <div class="form-group">
+                    <label for="registerEmail">Email</label>
+                    <input name="registerEmail" type="email" class="form-control" id="registerEmail" placeholder="Email">
+                    <small id="emailHelp" class="form-text text-muted">Bizalmasan kezeljük.</small>
+                  </div>
+                  <div class="form-group">
+                    <div class="form gourp">
+                      <select name="location" class="custom-select">
+                          <option value="notset" selected>Milyen településeb laksz?</option>
+                          <option value="1">Főváros</option>
+                          <option value="2">Megyeszékhely</option>
+                          <option value="3">Kistelepülés</option>
+                        </select>
+                    </div>
+                  </div> 
+                  
+                  <div class="form group">
+                      <label class="custom-file">
+                        <input name="avatar" type="file" id="file2" class="custom-file-input">
+                        <span class="custom-file-control"></span>
+                      </label>
+                  </div>
+                  <div class="form-group"> 
+                    <label for="registerPassword">Jelszó</label>
+                    <input required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                     name="registerPassword" type="password" class="form-control" id="registerPassword" placeholder="Jelszó">
+                  </div>
+                  <div class="form-group">
+                    <label for="registerPassword2">Jelszó mégegyszer</label>
+                    <input required name="registerPassword2" type="password" class="form-control" id="registerPassword2" placeholder="Jelszó mégegyszer">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Regisztráció</button>
+                </form>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div> <!-- /Login -->
 
     </div> <!-- /container -->
+
+    <!-- Site footer -->
+    <div class="container footer-container">
+      <footer class="footer">
+          <p>&copy; Company 2017</p>
+      </footer>
+    </div> <!-- /Site footer -->
 
 
     <!-- Bootstrap core JavaScript
