@@ -155,5 +155,19 @@
     <script src="lib/jquery-3.2.1.slim.min.js"></script>
     <script src="lib/popper.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+      $(".events-search-row input").on("keyup", function(ev) {
+      $.each( $(".events-card-deck .card .card-title"), function(i, e)   {
+          var elem = $(e);
+          var search = ev.target.value.toLowerCase();
+          var content = elem.html().toLowerCase();
+          if ( content.indexOf(search) == -1 ) {
+            elem.parents(".card").hide();
+          } else {
+            elem.parents(".card").show();
+          }
+        });
+      });
+    </script>
   </body>
 </html>

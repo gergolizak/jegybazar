@@ -5,22 +5,28 @@ function fadeDone() {
 
 // Eseménykezelő beállítása
 $("p").click(function(){
-    $(this).hide();
+    //$(this).hide();
     //$(this).fadeTo(5000, 1, fadeDone);
-    $(this).slideDown(3500);
+    //$(this).slideDown(3500).css("color", "blue");
 });
 
 // Esemény kiválasztása
-$("p").click();
+//$("p").click();
 
 // Kattintás megelőzése
 $("nav a.nav-link").click( function(ev) {
     ev.preventDefault();
-    var link = $(this);
-    $(document.body).animate({
-        opacity: '0'
-    }, 1000, function() {
-        document.location = link.attr("href");
-
-    })
+    startPageChange(this, 1, false);
 });
+function startPageChange(elem, num, bool) {
+    var link = $(elem);
+    var prop = link.data("prop")    || "opacity";
+    var val = link.data("value")    || "0";
+    var speed = link.data("speed")  || 1000;
+    var settings = {};
+    settings[prop] = val;
+
+    $(document.body).animate(settings, speed, function() {
+        document.location = link.attr("href");
+    });
+}
