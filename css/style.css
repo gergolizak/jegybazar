@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+/* @import url('https://fonts.googleapis.com/css?family=Roboto'); */
 @import url('../lib/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css');
 body {
     padding-top: 20px;
     padding-bottom: 100px;
-    font-family: 'Roboto', sans-serif;
     position: absolute;
     top: 0;
     right: 0;
