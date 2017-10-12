@@ -56,42 +56,42 @@ $(function () {
          event: "Sziget Fesztivál",
          time: "2018-08-03 18:00:00",
          seller: "Kis Márton",
-         pcs: 5,
+         pcs: 9,
          link: "licit/1"
      },
      {
          event: "Balaton Sound",
          time: "2018-08-03 18:00:00",
          seller: "Hát Izsák",
-         pcs: 5,
+         pcs: 6,
          link: "licit/1"
      },
      {
          event: "Efott Fesztivál",
          time: "2018-08-03 18:00:00",
          seller: "Kovász Gergő",
-         pcs: 5,
+         pcs: 1,
          link: "licit/1"
      },
      {
          event: "A Kékszakálú Herceg vára",
          time: "2018-08-03 18:00:00",
          seller: "Járőr Sándor",
-         pcs: 5,
+         pcs: 15,
          link: "licit/1"
      },
      {
          event: "Balett mindenkinek",
          time: "2018-08-03 18:00:00",
          seller: "Denevér Cece",
-         pcs: 5,
+         pcs: 3,
          link: "licit/1"
      },
      {
          event: "Macskák Musical",
          time: "2018-08-03 18:00:00",
          seller: "Pálinkás Alma",
-         pcs: 5,
+         pcs: 2,
          link: "licit/1"
      }
  ];
@@ -134,6 +134,38 @@ $(function () {
         }); 
      }
      fillTicketsTable(filteredTickets);
+ }
+
+ // Jegyet táblázat rendezése
+ ticketTable.find("thead th[data-key]").on("click", orderTicketTable);
+ function orderTicketTable() {
+     var th = $(this);
+     $.each(ticketTable.find('thead  th[data-key]'), function(index, elem) {
+        var currentTh = $(elem);
+        if (th.data("key") != currentTh.data("key")) {
+          currentTh.removeClass("asc").removeClass("desc");
+        }
+     });
+     var key = th.data("key");
+     var sortedTickets = tickets.map( function(item) {
+         return item;
+     });
+
+     if (th.hasClass("asc")) {
+        th.removeClass("asc").addClass("desc");
+     } else {
+        th.addClass("asc");
+        th.removeClass("desc").addClass("asc");   
+     }
+
+     sortedTickets.sort(function(a, b) {
+        if (th.hasClass("asc")) {
+            return a[key].toString().localeCompare(b[key].toString());
+         } else {
+            return b[key].toString().localeCompare(a[key].toString());
+         }
+    });
+     fillTicketsTable(sortedTickets);
  }
 
  // Regiszter oldal
