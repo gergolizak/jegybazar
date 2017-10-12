@@ -113,7 +113,7 @@
       </div>  /table -->
 
       <div class="card-deck events-card-deck">
-        <a href="tickets.html?event=1" class="card">
+        <a href="tickets.html?event=1" class="card col-12 col-sm-6 col-md-4">
           <img class="card-img-top" src="img/sziget_logo.png" alt="sziget logo">
           <div class="card-body">
             <h4 class="card-title">Sziget Fesztivál</h4>
@@ -121,7 +121,7 @@
             <p class="card-text"><small class="text-muted">2017-08-03</small></p>
           </div>
         </a>
-        <a href="tickets.html?event=2" class="card">
+        <a href="tickets.html?event=2" class="card col-12 col-sm-6 col-md-4">
           <img class="card-img-top" src="img/sound_logo.jpg" alt="sound logo">
           <div class="card-body">
             <h4 class="card-title">Balaton Sound</h4>
@@ -129,7 +129,7 @@
             <p class="card-text"><small class="text-muted">2017-09-03</small></p>
           </div>
         </a>
-        <a href="tickets.html?event=3" class="card">
+        <a href="tickets.html?event=3" class="card col-12 col-sm-6 col-md-4">
           <img class="card-img-top" src="img/efott_logo.jpg" alt="efott logo">
           <div class="card-body">
             <h4 class="card-title">Efott Fesztivál</h4>
@@ -138,7 +138,32 @@
           </div>
         </a>
       </div>
-
+      <div class="card-deck events-card-deck"> 
+        <a href="tickets.html?event=3" class="card col-12 col-sm-6 col-md-4">
+          <img class="card-img-top" src="img/efott_logo.jpg" alt="efott logo">
+          <div class="card-body">
+            <h4 class="card-title">Efott Fesztivál</h4>
+            <p class="card-text">Látogass el Agárdra az Efottra és bulizz a legjobb arcokkal.</p>
+            <p class="card-text"><small class="text-muted">2017-10-03</small></p>
+          </div>
+        </a>
+        <a href="tickets.html?event=3" class="card col-12 col-sm-6 col-md-4">
+          <img class="card-img-top" src="img/efott_logo.jpg" alt="efott logo">
+          <div class="card-body">
+            <h4 class="card-title">Efott Fesztivál</h4>
+            <p class="card-text">Látogass el Agárdra az Efottra és bulizz a legjobb arcokkal.</p>
+            <p class="card-text"><small class="text-muted">2017-10-03</small></p>
+          </div>
+        </a>
+        <a href="tickets.html?event=3" class="card col-12 col-sm-6 col-md-4">
+          <img class="card-img-top" src="img/efott_logo.jpg" alt="efott logo">
+          <div class="card-body">
+            <h4 class="card-title">Efott Fesztivál</h4>
+            <p class="card-text">Látogass el Agárdra az Efottra és bulizz a legjobb arcokkal.</p>
+            <p class="card-text"><small class="text-muted">2017-10-03</small></p>
+          </div>
+        </a>
+      </div>
     </div> <!-- /container -->
 
     <!-- Site footer -->
@@ -152,22 +177,9 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="lib/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="lib/popper.min.js"></script>
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-    <script>
-      $(".events-search-row input").on("keyup", function(ev) {
-      $.each( $(".events-card-deck .card .card-title"), function(i, e)   {
-          var elem = $(e);
-          var search = ev.target.value.toLowerCase();
-          var content = elem.html().toLowerCase();
-          if ( content.indexOf(search) == -1 ) {
-            elem.parents(".card").hide();
-          } else {
-            elem.parents(".card").show();
-          }
-        });
-      });
-    </script>
+    <script src="js/main.js"></script>
   </body>
 </html>

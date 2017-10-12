@@ -30,3 +30,22 @@ function startPageChange(elem, num, bool) {
         document.location = link.attr("href");
     });
 }
+
+// Event search
+$(".events-search-row input").on("keyup", function(ev) {
+    $.each( $(".events-card-deck .card .card-title"), function(index, elem)   {
+        elem = $(elem);
+        var search = ev.target.value.toLowerCase();
+        var content = elem.html().toLowerCase();
+        if ( content.indexOf(search) == -1 ) {
+          elem.parents(".card").hide();
+        } else {
+          elem.parents(".card").show();
+        }
+    });
+});
+
+// Ticket tooltip
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+ });
